@@ -1,0 +1,41 @@
+<div class="col-md-7 m-auto">
+    <div class="modal fade" id="addstudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Student</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+<form action="/student/postInfo" method="POST" enctype="multipart/form-data">
+    <div class="modal-body">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" name="name" placeholder="Enter student name....">
+    </div>
+    <div class="form-group">
+        <label for="section">Section</label>
+        <input type="text" class="form-control" id="section" name="section" placeholder="Enter student name...." >
+    </div>
+    <div class="form-group">
+        <label for="rollno">Rollno</label>
+        <input type="text" class="form-control" id="rollno" name="rollno" placeholder="Enter student name....">
+    </div>
+    <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" class="form-control-file" id="image" name="image">
+      </div>
+    <div class="form-group">
+        <label for="biography">Biography</label>
+        <textarea class="form-control" id="biography" name="biography" rows="3"></textarea>
+    </div>
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Add</button>
+    </div>
+    </div>
+</form>
+</div>
+</div>
+</div>
+</div>
