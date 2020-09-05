@@ -85,6 +85,7 @@ router.get('/edit/:id', (req, res) => {
 });
 
 router.post('/edit/:id', (req, res) => {
+    const {id} = req.params;
     let form = new formidable.IncomingForm(); 
     form.maxFieldsSize = 2 * 1024 * 1024;
     form.keepExtensions = true;
@@ -107,8 +108,8 @@ router.post('/edit/:id', (req, res) => {
                     image: newPath,
                     biography: fields.biography
                 }
-                studentModel.findByIdAndUpdate(datas)
-                .then((data) => {
+                studentModel.findByIdAndUpdate(id, datas)
+                .then(() => {
                     res.redirect('/student/');
                 })
                 .catch(err => console.log(err));
