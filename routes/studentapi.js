@@ -62,7 +62,7 @@ router.post('/postInfo', (req, res) => {
                 const studentinfo = new studentModel(datas);
                 studentinfo.save()
                 .then((data) => {
-                    res.redirect('/student/');
+                    res.redirect('/student');
                     console.log(data);
                 })
                 .catch(err => console.log(err));
@@ -110,7 +110,7 @@ router.post('/edit/:id', (req, res) => {
                 }
                 studentModel.findByIdAndUpdate(id, datas)
                 .then(() => {
-                    res.redirect('/student/');
+                    res.redirect('/student');
                 })
                 .catch(err => console.log(err));
 
@@ -123,7 +123,7 @@ router.post('/edit/:id', (req, res) => {
 router.get('/delete/:id', (req, res) => {
     studentModel.findByIdAndDelete({_id: req.params.id})
     .then(() => {
-        res.redirect('/student/');
+        res.redirect('/student');
     })
     .catch(err => console.log(err));
 });
