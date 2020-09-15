@@ -4,6 +4,7 @@ const fs = require('fs');
 const {v1: uuidv1} = require('uuid');
 const {render} = require('ejs');
 const path = require('path');
+const mv = require('mv');
 const studentModel = require('../models/student'); 
 const router = express.Router();
 
@@ -45,7 +46,7 @@ router.post('/postInfo', (req, res) => {
         var oldPath = files.image.path; 
         var newPath = 'uploads/' + uuidv1() + files.image.name ; 
       
-        fs.rename(oldPath, newPath, function(err){ 
+        mv(oldPath, newPath, function(err){ 
             if(err) 
                 {
                     console.log(err);
@@ -94,7 +95,7 @@ router.post('/edit/:id', (req, res) => {
         var oldPath = files.image.path; 
         var newPath = 'uploads/' + uuidv1() + files.image.name ; 
       
-        fs.rename(oldPath, newPath, function(err){ 
+        mv(oldPath, newPath, function(err){ 
             if(err) 
                 {
                     console.log(err);
